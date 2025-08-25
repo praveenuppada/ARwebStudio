@@ -129,7 +129,7 @@ export default function App() {
       <section id="services" className="max-w-6xl mx-auto px-4 py-10">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold">Our Website Packages</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold break-words">Our Website Packages</h2>
             <p className="text-slate-500 mt-1">
               Transparent, India-friendly pricing. Pay only for what you need.
             </p>
@@ -189,7 +189,7 @@ export default function App() {
               </div>
               <div className="mt-3 flex items-center justify-between">
                 <div>
-                  <p className="font-medium">{p.title}</p>
+                    <p className="font-medium break-words">{p.title}</p>
                   <p className="text-xs text-slate-500">{p.tag}</p>
                 </div>
                 <span className="text-sm text-emerald-600 group-hover:underline">View →</span>
@@ -284,11 +284,30 @@ function Header() {
         <div className="md:hidden border-t border-slate-100 px-4 pb-4">
           <div className="flex flex-col gap-3 text-sm">
             <a href="#services" onClick={() => setOpen(false)}>Services</a>
-            <a href="#addons" onClick={() => setOpen(false)}>Add‑ons</a>
+            <a href="#addons" onClick={() => setOpen(false)}>Add-ons</a>
             <a href="#portfolio" onClick={() => setOpen(false)}>Portfolio</a>
             <a href="#about" onClick={() => setOpen(false)}>About</a>
             <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-            <a href={`https://wa.me/${BRAND.whatsapp}`} className="rounded-lg bg-emerald-600 text-white px-4 py-2 w-max" onClick={() => setOpen(false)}>WhatsApp</a>
+
+            {/* Action buttons */}
+            <div className="mt-2 grid grid-cols-2 gap-3">
+              <a
+                href={`https://wa.me/${BRAND.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg bg-emerald-600 text-white px-4 py-2 text-center font-semibold"
+                onClick={() => setOpen(false)}
+              >
+                WhatsApp
+              </a>
+              <a
+                href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
+                className="rounded-lg bg-emerald-500 text-white px-4 py-2 text-center font-semibold"
+                onClick={() => setOpen(false)}
+              >
+                Call
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -315,7 +334,7 @@ function Hero() {
 
       <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-slate-900 break-words">
             Get a beautiful website with <span className="text-emerald-700">clear pricing</span>
           </h1>
           <p className="mt-4 text-slate-600 text-lg">We build fast, mobile‑first websites for Indian businesses: schools, clinics, shops, real estate, creators and more.</p>
@@ -417,7 +436,7 @@ function ServiceCard({ service }) {
         <span className="absolute -top-2 right-3 rounded-full bg-emerald-600 text-white text-xs px-3 py-1 shadow">{service.badge}</span>
       )}
       <div className="text-3xl">{service.icon}</div>
-      <h3 className="mt-2 font-semibold text-lg">{service.title}</h3>
+      <h3 className="mt-2 font-semibold text-lg break-words">{service.title}</h3>
       <p className="text-emerald-700 font-semibold">{service.price}</p>
       <ul className="mt-2 text-sm text-slate-600 list-disc ml-5 space-y-1">
         {service.bullets.map((b, i) => (
