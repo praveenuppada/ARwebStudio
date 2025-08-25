@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+/* === Global UX safeguards === */
+
+/* 1) Make every <img> responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* avoids random gaps in some layouts */
+}
+
+/* 2) Prevent sideways scrolling site-wide */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 3) Wrap very long words/URLs so they don’t overflow on mobile */
+p, .wrap-anywhere {
+  overflow-wrap: anywhere;   /* preferred in modern browsers */
+  word-break: break-word;    /* fallback */
+}
+
+/* 4) (Optional) Smoother fonts & scrolling feel */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
