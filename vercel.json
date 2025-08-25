@@ -1,0 +1,9 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "outputDirectory": "dist",
+  "env": {
+    "NPM_CONFIG_PRODUCTION": "false"
+  }
+}
